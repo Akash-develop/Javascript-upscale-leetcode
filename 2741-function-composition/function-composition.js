@@ -1,0 +1,24 @@
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function(functions) {
+    
+     return function(x) {
+        // apply from right to left
+        return functions.reduceRight((acc, fn) => fn(acc), x);
+    }
+};
+
+
+ const fn = compose([x => x + 1, x => 2 * x])
+ fn(4) // 9
+
+ const fn1 = compose([x => x + 1, x => 2 * x]);
+console.log(fn1(4));
+
+const fn2 = compose([x => x + 1, x => x * x, x => 2 * x]);
+console.log(fn2(4)); // 65
+
+const fn3 = compose([]);
+console.log(fn3(42)); // 42

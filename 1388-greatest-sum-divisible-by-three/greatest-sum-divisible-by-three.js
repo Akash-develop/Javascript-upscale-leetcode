@@ -30,5 +30,3 @@ var maxSumDivThree = function(nums) {
         return Math.max(option1, option2);
     }
 };
-
-maxSumDivThree([3,6,5,1,8])
